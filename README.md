@@ -1,6 +1,8 @@
 # WA Radio
 
-WA Radio is a simple C# online radio application for Windows. WA stands
+![WA Radio UI](https://raw.github.com/lukosius/waradio/master/screenshots/2016_03_16_03_00.png)
+
+**WA Radio** is a simple C# online radio application for Windows. WA stands
 for Windows Application.
 
 # High level user stories
@@ -22,3 +24,10 @@ for Windows Application.
 
 - C# .NET 4.5+
 - SQLite 3+
+- [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
+
+# Copyright
+
+Most icons are taken from:
+
+- [Windows Icons](https://github.com/Templarian/WindowsIcons) -> [modernuiicons](http://modernuiicons.com)
