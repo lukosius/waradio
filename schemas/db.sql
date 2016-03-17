@@ -26,3 +26,9 @@ CREATE TABLE "streams" (
     "station_id" INTEGER NOT NULL REFERENCES "stations" ("id"),
     "url" VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE "history" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "station_id" INTEGER NOT NULL REFERENCES "stations" ("id"),
+    "ts_created" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
