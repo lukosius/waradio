@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using System.Windows;
+using MahApps.Metro.Controls;
 
 namespace WARadio
 {
@@ -10,6 +11,12 @@ namespace WARadio
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ClickSettings(object sender, RoutedEventArgs e)
+        {
+            MetroWindow s = new SettingsWindow();
+            s.ShowDialog();
         }
     }
 }

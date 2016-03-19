@@ -32,7 +32,7 @@
 
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button Content="settings" />
+            <Button x:Name="SettingsButton" Content="settings" Click="ClickSettings" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
 

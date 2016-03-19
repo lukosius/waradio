@@ -1,0 +1,117 @@
+﻿<Controls:MetroWindow x:Class="WARadio.SettingsWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:local="clr-namespace:WARadio"
+                      mc:Ignorable="d"
+                      Title="Settings" 
+                      Height="274" 
+                      Width="400"
+                      BorderBrush="{DynamicResource AccentColorBrush}"
+                      BorderThickness="1"
+                      WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" x:Name="tabControl" TabStripPlacement="Left">
+            <TabItem Header="General">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" />
+                    <Label Grid.Row="0" Grid.Column="1" Content="Start with Windows" />
+                    <CheckBox Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" />
+                    <Label Grid.Row="1" Grid.Column="1" Content="Start minimized" />
+                    <CheckBox Grid.Row="2" Grid.Column="0" Margin="5,0,0,0" />
+                    <Label Grid.Row="2" Grid.Column="1" Content="Open Google when clicking song title" />
+                    <CheckBox Grid.Row="3" Grid.Column="0" Margin="5,0,0,0" />
+                    <Label Grid.Row="3" Grid.Column="1" Content="Automatically start playing after startup" />
+                    <CheckBox Grid.Row="4" Grid.Column="0" Margin="5,0,0,0" />
+                    <Label Grid.Row="4" Grid.Column="1" Content="Minimize to tray" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Hotkeys">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" />
+                        <Label Grid.Row="0" Grid.Column="1" Content="Enable Hotkeys" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="120" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Start/Stop playing" />
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="Ctrl + Shift + P" IsEnabled="False" Margin="0,0,2,0" />
+                        <Label Grid.Row="1" Grid.Column="0" Content="Mute/Unmute" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="Ctrl + Shift + M" IsEnabled="False" Margin="0,0,2,0" />
+                        <Label Grid.Row="2" Grid.Column="0" Content="Adjust volume up" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="Ctrl + Shift + Num+" IsEnabled="False" Margin="0,0,2,0" />
+                        <Label Grid.Row="3" Grid.Column="0" Content="Adjust volume down" />
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="Ctrl + Shift + Num-" IsEnabled="False" Margin="0,0,2,0" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="Hide/Show window" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="Ctrl + Shift + H" IsEnabled="False" Margin="0,0,2,0" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Button Content="Restore to defaults" Margin="5,5,5,0" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="About">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="TitleLabel" Grid.Row="0" Content="WA Radio" />
+                    <Label x:Name="VersionLabel" Grid.Row="1" Content="Version: v0.0.1" />
+                    <Label x:Name="CopyrightLabel" Grid.Row="2" Content="Copyright @ Gedas Lukošius 2016" />
+                    <TextBox x:Name="DescriptionBox" Grid.Row="3" IsReadOnly="true" Margin="5,10,3,5" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1" Margin="0,5,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="OK" Margin="2,0,0,0" Width="60"  />
+            <Button Grid.Column="2" Content="Close" Margin="2,0,0,0" IsCancel="True" Width="60" />
+            <Button Grid.Column="3" Content="Apply" Margin="2,0,5,0" Width="60" IsEnabled="False" />
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>
