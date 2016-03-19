@@ -18,5 +18,11 @@ namespace WARadio
             MetroWindow s = new SettingsWindow();
             s.ShowDialog();
         }
+
+        private void ClickFavorites(object sender, RoutedEventArgs e)
+        {
+            MetroWindow s = new FavoritesWindow();
+            s.ShowDialog();
+        }
     }
 }
