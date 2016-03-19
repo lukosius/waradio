@@ -1,0 +1,44 @@
+﻿<Controls:MetroWindow x:Class="WARadio.EditWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:local="clr-namespace:WARadio"
+                      mc:Ignorable="d"
+                      Title="Edit station" 
+                      Height="186" 
+                      Width="347"
+                      BorderBrush="{DynamicResource AccentColorBrush}"
+                      BorderThickness="1"
+                      WindowStartupLocation="CenterScreen"
+                      ResizeMode="NoResize"
+                      ShowInTaskbar="False">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Station name" FontSize="16" FontFamily="Segoe UI Light" Padding="0,5" />
+        <TextBox Grid.Row="1" Controls:TextBoxHelper.Watermark="Enter station name..." />
+        <Label Grid.Row="2" Content="Stream URL" FontSize="16" FontFamily="Segoe UI Light" Padding="0,5" />
+        <TextBox Grid.Row="3" Controls:TextBoxHelper.Watermark="Enter stream URL..." />
+
+        
+        
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="Save" Margin="2,0,0,0" IsCancel="True" Width="60" />
+            <Button Grid.Column="2" Content="Cancel" Margin="2,0,0,0" IsCancel="True" Width="60" />
+        </Grid>
+        
+    </Grid>
+</Controls:MetroWindow>
