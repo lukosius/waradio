@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WARadio.Properties
-{
-
-
+namespace WARadio.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,67 @@ namespace WARadio.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WARadio.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE &quot;countries&quot; (
+        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        ///    &quot;name&quot; VARCHAR(50) NOT NULL UNIQUE
+        ///);
+        ///
+        ///CREATE TABLE &quot;favorites&quot; (
+        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        ///    &quot;station_id&quot; INTEGER NOT NULL REFERENCES &quot;stations&quot; (&quot;id&quot;)
+        ///);
+        ///
+        ///CREATE TABLE &quot;genres&quot; (
+        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        ///    &quot;name&quot; VARCHAR(50) NOT NULL UNIQUE
+        ///);
+        ///
+        ///CREATE TABLE &quot;stations&quot; (
+        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        ///    &quot;title&quot; VARCHAR(100) N [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string tables {
+            get {
+                return ResourceManager.GetString("tables", resourceCulture);
             }
         }
     }

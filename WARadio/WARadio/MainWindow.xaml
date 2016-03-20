@@ -149,9 +149,9 @@
 
         <Grid Grid.Row="3">
             <StatusBar>
-                <StatusBarItem>Playing</StatusBarItem>
+                <StatusBarItem x:Name="StatusTitle">Playing</StatusBarItem>
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" />
-                <StatusBarItem>Linkin Park - In The End</StatusBarItem>
+                <StatusBarItem x:Name="StatusDescription">Linkin Park - In The End</StatusBarItem>
             </StatusBar>
         </Grid>
 

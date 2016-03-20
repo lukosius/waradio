@@ -11,6 +11,15 @@ namespace WARadio
         public MainWindow()
         {
             InitializeComponent();
+
+            // TODO: Remove after implementing other functions in app related with database
+            Database db = new Database();
+
+            if (db.Connection != null)
+            {
+                StatusTitle.Content = "Database";
+                StatusDescription.Content = "Connected to database...";
+            }
         }
 
         private void ClickSettings(object sender, RoutedEventArgs e)
