@@ -1,90 +1,56 @@
 ﻿using System;
+using System.Data;
 using System.Data.SQLite;
 using System.IO;
 
 namespace WARadio
 {
-    class Database
+    public class Database
     {
+        /// <summary>
+        /// SQLite connection object
+        /// </summary>
+        public SQLiteConnection Connection;
+
         /// <summary>
         /// SQLite database file
         /// </summary>
-        public string DatabaseFilename
-        {
-            get
-            {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WARadio\\waradio.sqlite");
-            }
-        }
-
-        /// <summary>
-        /// SQLite connection string
-        /// </summary>
-        public string ConnectionString
-        {
-            get
-            {
-                return "Data Source=" + DatabaseFilename + ";Version=3;";
-            }
-        }
-
-        /// <summary>
-        /// SQLite connection object
-        /// </summary>
-        public SQLiteConnection Connection
-        {
-            get
-            {
-                return _db;
-            }
-        }
-
-        /// <summary>
-        /// SQLite connection object
-        /// </summary>
-        private SQLiteConnection _db;
+        public string SqliteFile;
 
         /// <summary>
         /// Class constructor
+        /// 
+        /// Initializes connection with the given connection string
         /// </summary>
-        public Database()
+        public Database(string file = null)
         {
-            if (!DatabaseExists())
-                CreateDatabase();
+            if (file != null)
+            {
+                SqliteFile = file;
+            }
+            else
+            {
+                SqliteFile = GetDBFilename();
+            }
 
-            _db = new SQLiteConnection(ConnectionString);
-            _db.Open();
+            Connection = new SQLiteConnection("Data Source=" + SqliteFile + ";Version=3;");
         }
 
         /// <summary>
-        /// Determines if SQLite database file exists
+        /// Checks whether SQLite database file exists
         /// </summary>
-        /// <returns>true if DB exists, false otherwise</returns>
-        public bool DatabaseExists()
+        /// <returns>true if database file exists, false otherwise</returns>
+        public bool Exists()
         {
-            return File.Exists(DatabaseFilename);
+            return File.Exists(SqliteFile);
         }
 
         /// <summary>
-        /// Creates SQLite database
+        /// Creates SQLite database file
         /// </summary>
-        private void CreateDatabase()
+        public void Create()
         {
-            string path = Path.GetDirectoryName(DatabaseFilename);
-
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-
-            SQLiteConnection.CreateFile(DatabaseFilename);
-            CreateTables();
-        }
-
-        /// <summary>
-        /// Create SQLite database tables
-        /// </summary>
-        private void CreateTables()
-        {
-            using (SQLiteConnection db = new SQLiteConnection(ConnectionString))
+            using (SQLiteConnection db = new SQLiteConnection(Connection.ConnectionString))
             {
                 db.Open();
 
@@ -102,6 +68,48 @@ namespace WARadio
 
                 db.Close();
             }
+        }
+
+        /// <summary>
+        /// Deletes database file
+        /// </summary>
+        public void Delete()
+        {
+            if (File.Exists(SqliteFile))
+            {
+                File.Delete(SqliteFile);
+            }
+        }
+
+        /// <summary>
+        /// Starts the connection with the database
+        /// </summary>
+        public void Start()
+        {
+            if (Connection.State == ConnectionState.Open)
+            {
+                Connection.Close();
+            }
+
+            if (Exists() == false)
+            {
+                Create();
+            }
+
+            Connection.Open();
+        }
+
+        /// <summary>
+        /// Stops the connection with the database
+        /// </summary>
+        public void Stop()
+        {
+            Connection.Close();
+        }
+
+        public string GetDBFilename()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "WARadio\\waradio.sqlite");
         }
     }
 }
