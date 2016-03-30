@@ -46,7 +46,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Margin="3">
-            <TextBox Controls:TextBoxHelper.Watermark="Search..."  />
+            <TextBox Controls:TextBoxHelper.Watermark="Search..." />
         </Grid>
 
         <Grid Grid.Row="1">

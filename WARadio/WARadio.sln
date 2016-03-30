@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WARadio", "WARadio\WARadio.csproj", "{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WARadio.Tests", "WARadio.Tests\WARadio.Tests.csproj", "{CB9C23FB-DC07-4286-9473-321D69AF2883}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
