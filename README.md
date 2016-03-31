@@ -32,4 +32,5 @@ for Windows Application.
 
 Most icons are taken from:
 
+- [Elegantthemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free)
 - [Windows Icons](https://github.com/Templarian/WindowsIcons) -> [modernuiicons](http://modernuiicons.com)

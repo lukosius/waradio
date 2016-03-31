@@ -61,6 +61,16 @@ namespace WARadio.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Elegantthemes_Beautiful_Flat_One_Color_Radio {
+            get {
+                object obj = ResourceManager.GetObject("Elegantthemes_Beautiful_Flat_One_Color_Radio", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE TABLE &quot;countries&quot; (
         ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         ///    &quot;name&quot; VARCHAR(50) NOT NULL UNIQUE
