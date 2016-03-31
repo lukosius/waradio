@@ -14,7 +14,53 @@
                       BorderBrush="{DynamicResource AccentColorBrush}"
                       BorderThickness="1">
 
-    <!-- Controls -->
+    <Controls:MetroWindow.Resources>
+        <Rectangle x:Key="play" Width="13" Height="13">
+            <Rectangle.Fill>
+                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_control_play}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="stop" Width="13" Height="13">
+            <Rectangle.Fill>
+                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_control_pause}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="favorite" Width="13" Height="13">
+            <Rectangle.Fill>
+                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_heart_outline}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="unfavorite" Width="13" Height="13">
+            <Rectangle.Fill>
+                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_heart}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="volume_0" Width="16" Height="16">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{StaticResource appbar_sound_0}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="volume_1" Width="16" Height="16">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{StaticResource appbar_sound_1}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="volume_2" Width="16" Height="16">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{StaticResource appbar_sound_2}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="volume_3" Width="16" Height="16">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{StaticResource appbar_sound_3}" />
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Key="volume_mute" Width="16" Height="16">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{StaticResource appbar_sound_mute}" />
+            </Rectangle.Fill>
+        </Rectangle>
+    </Controls:MetroWindow.Resources>
 
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
@@ -81,35 +127,31 @@
                 ToolTip="Play"
                 Style="{DynamicResource MetroCircleButtonStyle}"
                 Height="35"
-                Width="35" HorizontalAlignment="Left">
+                Width="35" HorizontalAlignment="Left" IsEnabled="False">
                 <Rectangle Width="13"
                        Height="13">
                     <Rectangle.Fill>
-                        <VisualBrush Stretch="Fill"
-                                 Visual="{StaticResource appbar_control_rewind}" />
+                        <VisualBrush Visual="{StaticResource appbar_control_rewind}" />
                     </Rectangle.Fill>
                 </Rectangle>
             </Button>
 
-            <Button Grid.Column="1"
-                ToolTip="Play"
-                Style="{DynamicResource MetroCircleButtonStyle}"
-                Height="45"
-                Width="45" HorizontalAlignment="Left">
-                <Rectangle Width="13"
-                       Height="13">
-                    <Rectangle.Fill>
-                        <VisualBrush Stretch="Fill"
-                                 Visual="{StaticResource appbar_control_pause}" />
-                    </Rectangle.Fill>
-                </Rectangle>
-            </Button>
+            <Button x:Name="ButtonPlay"
+                    Grid.Column="1"
+                    ToolTip="Play"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    Height="45"
+                    Width="45"
+                    HorizontalAlignment="Left"
+                    Click="ClickPlay"
+                    Content="{DynamicResource play}"
+                    Tag="play"/>
 
             <Button Grid.Column="2"
                 ToolTip="Play"
                 Style="{DynamicResource MetroCircleButtonStyle}"
                 Height="35"
-                Width="35" HorizontalAlignment="Left">
+                Width="35" HorizontalAlignment="Left" IsEnabled="False">
                 <Rectangle Width="13"
                        Height="13">
                     <Rectangle.Fill>
@@ -119,41 +161,39 @@
                 </Rectangle>
             </Button>
 
-            <Grid Grid.Column="4" HorizontalAlignment="Right">
-                <Rectangle Width="16" Height="16">
-                    <Rectangle.Fill>
-                        <VisualBrush Visual="{StaticResource appbar_sound_3}" />
-                    </Rectangle.Fill>
-                </Rectangle>
-            </Grid>
+            <Button x:Name="ButtonMute"
+                    Grid.Column="4" 
+                    HorizontalAlignment="Right"
+                    Content="{DynamicResource volume_mute}"
+                    Background="{x:Null}"
+                    BorderBrush="Transparent"
+                    IsEnabled="False"/>
+            
+            <Slider x:Name="SliderVolume"
+                    Grid.Column="5"
+                    Margin="5,0,0,0"
+                    VerticalAlignment="Center"
+                    ValueChanged="SliderVolumeChanged"
+                    SmallChange="5"
+                    LargeChange="10"/>
 
-            <Grid Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center">
-                <Slider  />
-            </Grid>
-
-            <Button Grid.Column="3"
-                        ToolTip="Add to favorites"
-                        Style="{DynamicResource MetroCircleButtonStyle}"
-                        Height="35"
-                        Width="35" HorizontalAlignment="Right">
-                <Rectangle Width="13"
-                       Height="13">
-                    <Rectangle.Fill>
-                        <VisualBrush Stretch="Fill"
-                                 Visual="{StaticResource appbar_heart_outline}" />
-                    </Rectangle.Fill>
-                </Rectangle>
-            </Button>
-
+            <Button x:Name="ButtonFavorites"
+                    Grid.Column="3"
+                    ToolTip="Add to favorites"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    Height="35"
+                    Width="35"
+                    HorizontalAlignment="Right"
+                    Click="ClickButtonFavorites"
+                    Tag="favorite"
+                    Content="{DynamicResource favorite}"/>
         </Grid>
 
-        <Grid Grid.Row="3">
-            <StatusBar>
-                <StatusBarItem x:Name="StatusTitle">Playing</StatusBarItem>
-                <Separator Style="{StaticResource MetroStatusBarSeparator}" />
-                <StatusBarItem x:Name="StatusDescription">Linkin Park - In The End</StatusBarItem>
-            </StatusBar>
-        </Grid>
+        <StatusBar Grid.Row="3">
+            <StatusBarItem x:Name="StatusTitle">Playing</StatusBarItem>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <StatusBarItem x:Name="StatusDescription">http://stream.m-1.fm/lietus/mp3.m3u</StatusBarItem>
+        </StatusBar>
 
     </Grid>
 
