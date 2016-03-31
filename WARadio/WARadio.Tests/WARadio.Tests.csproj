@@ -57,6 +57,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\WARadio\WARadio.csproj">
       <Project>{2ab83901-e2f9-4e6e-a8b6-14c9bd894e84}</Project>
       <Name>WARadio</Name>
