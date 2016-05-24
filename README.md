@@ -29,16 +29,6 @@ This program was made as a project for class.
 9. As an user I have ability to use hotkeys
 10. As an user I have ability to browse stations
 
-# Screenshots
-
-![Starting](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_01.png)
-![Browse by genres](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_03.png)
-![Browse by countries](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_04.png)
-![Station list](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_05.png)
-![Information about empty favorites](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_07.png)
-![Settings Window](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_08.png)
-![Search dialog](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_09.png)
-
 # Technologies
 
 - C# .NET 4.5+
