@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls;
+using Microsoft.Win32;
 using System.Reflection;
 
 namespace WARadio
@@ -14,6 +15,47 @@ namespace WARadio
             TitleLabel.Content = AssemblyTitle;
             CopyrightLabel.Content = AssemblyCopyright;
             DescriptionBox.Text = AssemblyDescription;
+
+            using (RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                string AppName = Assembly.GetEntryAssembly().GetName().Name;
+
+                if (rk.GetValue(AppName) == null)
+                {
+                    Properties.Settings.Default.StartWithWindows = false;
+                    Properties.Settings.Default.Save();
+                }
+            }
+
+            SettingStartWithWindows.IsChecked = Properties.Settings.Default.StartWithWindows;
+            SettingStartMinimized.IsChecked = Properties.Settings.Default.StartMinimized;
+            SettingAutoplay.IsChecked = Properties.Settings.Default.AutoplayAfterStartup;
+        }
+
+        private void SettingsOnClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Properties.Settings.Default.StartWithWindows != SettingStartWithWindows.IsChecked)
+            {
+                Properties.Settings.Default.StartWithWindows = (bool)SettingStartWithWindows.IsChecked;
+
+                using (RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+                {
+                    string AppName = Assembly.GetEntryAssembly().GetName().Name;
+
+                    if (Properties.Settings.Default.StartWithWindows)
+                    {
+                        rk.SetValue(AppName, Assembly.GetEntryAssembly().Location);
+                    }
+                    else
+                    {
+                        rk.DeleteValue(AppName);
+                    }
+                }
+            }
+
+            Properties.Settings.Default.StartMinimized = (bool)SettingStartMinimized.IsChecked;
+            Properties.Settings.Default.AutoplayAfterStartup = (bool)SettingAutoplay.IsChecked;
+            Properties.Settings.Default.Save();
         }
 
         #region Assembly Attribute Accessors
