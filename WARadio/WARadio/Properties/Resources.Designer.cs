@@ -61,38 +61,32 @@ namespace WARadio.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon Elegantthemes_Beautiful_Flat_One_Color_Radio {
+        internal static System.Drawing.Bitmap arrowup {
             get {
-                object obj = ResourceManager.GetObject("Elegantthemes_Beautiful_Flat_One_Color_Radio", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("arrowup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CREATE TABLE &quot;countries&quot; (
-        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        ///    &quot;name&quot; VARCHAR(50) NOT NULL UNIQUE
-        ///);
-        ///
-        ///CREATE TABLE &quot;favorites&quot; (
-        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        ///    &quot;station_id&quot; INTEGER NOT NULL REFERENCES &quot;stations&quot; (&quot;id&quot;)
-        ///);
-        ///
-        ///CREATE TABLE &quot;genres&quot; (
-        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        ///    &quot;name&quot; VARCHAR(50) NOT NULL UNIQUE
-        ///);
-        ///
-        ///CREATE TABLE &quot;stations&quot; (
-        ///    &quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        ///    &quot;title&quot; VARCHAR(100) N [rest of string was truncated]&quot;;.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string tables {
+        internal static System.Drawing.Bitmap nologo {
             get {
-                return ResourceManager.GetString("tables", resourceCulture);
+                object obj = ResourceManager.GetObject("nologo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon radio {
+            get {
+                object obj = ResourceManager.GetObject("radio", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

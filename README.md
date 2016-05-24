@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/slwj7dcl4hf926ef?svg=true)](https://ci.appveyor.com/project/lukosius/waradio)
 
-![WA Radio UI](https://raw.github.com/lukosius/waradio/master/screenshots/2016_03_16_03_00.png)
+![WA Radio UI](https://raw.github.com/lukosius/waradio/master/screenshots/2016_05_24_02.png)
 
 **WA Radio** is a simple C# online radio application for Windows. WA stands
 for Windows Application.
@@ -33,4 +33,4 @@ for Windows Application.
 Most icons are taken from:
 
 - [Elegantthemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free)
-- [Windows Icons](https://github.com/Templarian/WindowsIcons) -> [modernuiicons](http://modernuiicons.com)
+- [Material Design Icons](https://materialdesignicons.com/)

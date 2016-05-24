@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WARadio", "WARadio\WARadio.csproj", "{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WARadio", "WARadio\WARadio.csproj", "{30DB18DF-3ED8-46EC-8C52-6E63F9395F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WARadio.Tests", "WARadio.Tests\WARadio.Tests.csproj", "{CB9C23FB-DC07-4286-9473-321D69AF2883}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WARadio.Setup", "WARadio.Setup\WARadio.Setup.vdproj", "{CB73AE66-A799-4B46-ADC4-D2D3C7ED2BC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WARadio.Database", "WARadio.Database\WARadio.Database.csproj", "{5050D27C-FFB4-4047-B003-E01A24E8ACE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,17 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AB83901-E2F9-4E6E-A8B6-14C9BD894E84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB9C23FB-DC07-4286-9473-321D69AF2883}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB73AE66-A799-4B46-ADC4-D2D3C7ED2BC8}.Debug|Any CPU.ActiveCfg = Debug
-		{CB73AE66-A799-4B46-ADC4-D2D3C7ED2BC8}.Debug|Any CPU.Build.0 = Debug
-		{CB73AE66-A799-4B46-ADC4-D2D3C7ED2BC8}.Release|Any CPU.ActiveCfg = Release
+		{30DB18DF-3ED8-46EC-8C52-6E63F9395F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30DB18DF-3ED8-46EC-8C52-6E63F9395F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30DB18DF-3ED8-46EC-8C52-6E63F9395F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30DB18DF-3ED8-46EC-8C52-6E63F9395F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5050D27C-FFB4-4047-B003-E01A24E8ACE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5050D27C-FFB4-4047-B003-E01A24E8ACE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5050D27C-FFB4-4047-B003-E01A24E8ACE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5050D27C-FFB4-4047-B003-E01A24E8ACE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
